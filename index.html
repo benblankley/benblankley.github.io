@@ -27,19 +27,88 @@
 <p>NaNoWriMo is an annual fiction writing project that lots of writers all around the world participate in, during the month of November. Darius Kazemi created NaNoGenMo, an annual event for programmers to generate 50K word "novels" using code. I participated, and here is my submission: <a href="https://github.com/benblankley/NaNoGenMo2015">This Is Just To Code</a></p>
 
 <h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating pages manually</h3>
+<a id="advent-of-code" class="anchor" href="#advent-of-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advent of Code</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>Advent of Code is a set of programming exercises, one per day, throughout the month of December. I have completed Day 1. The code is <a href="https://github.com/benblankley/2015adventofcode">here</a>. A colleague suggested that I try the byte comparison rather than convert the bytes to strings, and do that comparison. The tests were ran several times. In every case, the byte comparison was faster than the string comparison.</p>
+
+<pre><code>[ben@localhost 2015adventofcode]$ time go run day1.go
+Floor: 232
+
+real    0m2.100s
+user    0m2.515s
+sys     0m0.182s
+[ben@localhost 2015adventofcode]$ time go run day1_byte.go                      Floor: 232
+
+real    0m1.986s
+user    0m2.436s
+sys     0m0.167s
+</code></pre>
+
+<p>I ran the tests on an Intel Atom 1.6 Ghz laptop, running Fedora Linux 23 and golang 1.5.1
+    [ben@localhost 2015adventofcode]$ cat /proc/cpuinfo
+    processor       : 0
+    vendor_id       : GenuineIntel
+    cpu family      : 6
+    model           : 28
+    model name      : Intel(R) Atom(TM) CPU N270   @ 1.60GHz
+    stepping        : 2
+    microcode       : 0x218
+    cpu MHz         : 800.000
+    cache size      : 512 KB
+    physical id     : 0
+    siblings        : 2
+    core id         : 0
+    cpu cores       : 1
+    apicid          : 0
+    initial apicid  : 0
+    fdiv_bug        : no
+    f00f_bug        : no
+    coma_bug        : no
+    fpu             : yes
+    fpu_exception   : yes
+    cpuid level     : 10
+    wp              : yes
+    flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca mov                                                                                                                                       pat clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx constant_tsc arch_perfmon                                                                                                                               pebs bts aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 xtpr pdcm movbe lah                                                                                                                               f_lm dtherm
+    bugs            :
+    bogomips        : 3199.93
+    clflush size    : 64
+    cache_alignment : 64
+    address sizes   : 32 bits physical, 32 bits virtual
+    power management:</p>
+
+<pre><code>processor       : 1
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 28
+model name      : Intel(R) Atom(TM) CPU N270   @ 1.60GHz
+stepping        : 2
+microcode       : 0x218
+cpu MHz         : 800.000
+cache size      : 512 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fdiv_bug        : no
+f00f_bug        : no
+coma_bug        : no
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 10
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov                                                                                                                                       pat clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx constant_tsc arch_perfmon                                                                                                                                pebs bts aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 xtpr pdcm movbe lah                                                                                                                                         f_lm      dtherm
+bugs            :
+bogomips        : 3199.93
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 32 bits physical, 32 bits virtual
+power management:
+</code></pre>
 
 <h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+<a id="other-projects" class="anchor" href="#other-projects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Projects</h3>
 
       <footer class="site-footer">
 
