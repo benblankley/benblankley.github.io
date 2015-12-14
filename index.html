@@ -70,6 +70,35 @@ BogoMIPS:              3199.93
 <h3>
 <a id="remote-access-to-home-linux-computer" class="anchor" href="#remote-access-to-home-linux-computer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remote Access to Home Linux Computer</h3>
 
+<p>After two efforts trying both Linux From Scratch and Arch Linux under VirtualBox, I decided to load up the latest <a href="https://getfedora.org/">Fedora</a> on my Asus EEE 901. I appreciate the Fedora community, and find it particularly welcoming among open source projects. Plus, the relative pace of distribution releases helps ensure I'm using the latest stable software available.</p>
+
+<p>I had considered purchasing a VPS, but other developers convinced me to try a server hosted from my home internet connection first.</p>
+
+<p>Step One: Install Fedora
+This step was easier than any other Linux distribution I've tried yet. The EEE 901 has two internal solid state drives, one 4GB and one 12GB. I just had to tell the Fedora installer to use both drives, and it configured it automatically to have a 16GB root directory structure, complete with adequate swap space.</p>
+
+<p>Step Two: Automatic Updates
+I'm not great at making sure my Linux boxes have consistenly applied updates, and plus, my home internet is slow, so I wanted updates to download and install automatically. The default update manager in Fedora 23 is DNF, and <a href="http://dnf.readthedocs.org/en/latest/automatic.html">DNF Automatic</a> exists. So I followed those directions and added the systemd timer to automatically download and install all updates.</p>
+
+<p>Step Three: Install OpenSSH Server
+By default, Fedora Workstation does not install the OpenSSH server. So, add the server using <a href="https://docs.fedoraproject.org/en-US/Fedora/23/html/System_Administrators_Guide/ch-OpenSSH.html">this tutorial</a>. I then use JuiceSSH to remote log in from my Android phone.</p>
+
+<p>Step Four: Harden The System
+I used <a href="https://www.digitalocean.com/community/tutorials/initial-setup-of-a-fedora-22-server">this tutorial</a> from Digital Ocean to harden my computer against compromise. I opted against a firewall, seeing as it wasn't necessary, as only the SSH port would be exposed to the outside network. The tutorial references iptables, which is actually the old way of doing Linux firewalls. The new way is firewalld.</p>
+
+<p>Step Five: Forward Ports
+My home network was double-NATted, so normal port forwarding, even using UPNP, was not working. Our modem is owned and managed by our ISP, so I inquired if they would set up port forwarding on their equipment. They agreed, and I turned off the routing capabilities of our home wireless access point. Now a single NAT, and the port forward works from the external IP address to the specified internal IP address of the EEE 901.</p>
+
+<p>Step Six: Static IP Address
+For this, all the tutorials I found used the command line. I opted to use the built-in Gnome network-manager in the graphical user interface. I chose the static IP address that my ISP had forwarded the port to, and used the wired interface for simplicity. I hard-wired the laptop into our home network.</p>
+
+<p>Step Seven: Dynamic DNS
+The public IP address that our modem receives from our ISP can and will change, so it was necessary to set up a dynamic DNS service. <a href="http://www.noip.com/">NO-IP</a> provides a free service with paid upgrades, and has update clients for most major operating systems, <a href="http://www.noip.com/support/knowledgebase/installing-the-linux-dynamic-update-client/">including Linux</a>.</p>
+
+<p>After that, then it's customization for whatever you would like your Linux server to do! I use mine for learning programming languages, but others use their home servers for OwnCloud, chat forwarding, web serving, and other cool projects.</p>
+
+<p>PS: <a href="https://github.com/sivel/speedtest-cli">speedtest-cli</a> is a very handy tool to test your connection speed via the Linux command line.</p>
+
 <h3>
 <a id="other-projects" class="anchor" href="#other-projects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Projects</h3>
 
