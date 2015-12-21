@@ -99,6 +99,11 @@ The public IP address that our modem receives from our ISP can and will change, 
 
 <p>PS: <a href="https://github.com/sivel/speedtest-cli">speedtest-cli</a> is a very handy tool to test your connection speed via the Linux command line.</p>
 
+<p>Step Eight: Log in remotely via public key cryptography
+In general, it is security best practices to use public/private key pairs to log on via SSH, instead of using a password every time. The steps I followed are detailed in <a href="https://www.linode.com/docs/security/use-public-key-authentication-with-ssh">this article</a> hosted by Linode. I used PuTTY and PuTTYGen from my Windows machines to create the secure keypairs, and logged in over the local network via password to add the public keys to authorized_keys.</p>
+
+<p>If you want your server to be extra secure, you can <a href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication">disable password authentication</a> altogether. This requires remote users to use public key cryptography.</p>
+
 <h3>
 <a id="other-projects" class="anchor" href="#other-projects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Projects</h3>
 
